@@ -10,5 +10,3 @@ deploy:
   app: zhenya-budget-staging
   on:
     repo: hazah/budget
-env:
-  SECRET_KEY_BASE: "$(bundle exec rake secret)"
