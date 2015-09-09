@@ -11,3 +11,5 @@ deploy:
   on:
     repo: hazah/budget
   run: "rake db:migrate"
+env:
+  - SECRET_KEY_BASE="$(bundle exec rake secret)"
