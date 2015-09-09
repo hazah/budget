@@ -3,8 +3,8 @@ rvm: 2.2.3
 bundler_args: "--without production development"
 before_script:
   - cp config/database.yml.example config/database.yml
-  - cp config/secrets.yml.example config/secrets.yml
 deploy:
+  skip_cleanup: true
   provider: heroku
   api_key:
     secure: WambMnDKA9K2swZitj5jacyqyJFpW8nAe/lKcHuY1LXDKuxCqSDeDtUJhumSkt+CRetOBBMZSdxfNr8hMfIhHz0Q73N22oUr9bnTXQRg0afRkbwGR3renYY7i8Ep3MADCgi8QAveupcPPymJkawTtktyaDfwKRmEmALHEeNLe+nLKXzr5smReODqp8itOUu1y6HhQdeOCtQD7o8CUjwzGjS2VrxbQN8WJ56uQRvZFqRBaWRmCUx5BmqVB2xUd7SpK9LgpY67OfGPcjS4Npob4hGRmIVBbp8sbBWuyc3o7mBDuHt8XzWt13uyGbjDuAFzthXbLcT9QVjbgePcjXN+EFdXRzZUQL/4sBXC0IGmQfj0Segv2dPClryZwL4eIe7oU7HO2848SzjU62tYRukBa3SymTfMynWkblRCaWtK3XSpL8rCg+45lM92jDC07qInmI0AtXRwj6EXStzqdJbQRQancLEBjhNQXPgYNlw8O32oz+R+qWii8vczx6flUAbXmQWo3JAQPqMmqUh9nmDh9H6PjRm0DuIkhJvFtHyN8axirvMbVtNCfyI5AtH7t32V1WJyJI9U3heQeO8Buo4+yqa5xH0ElWlyzlCltJbTx+IDcv03abJGCjOlTxIQc1lXKtSJ+uwYjeRHuz/khw0if3CUhtkG4jNBNRVnFOrxOBI=
