@@ -56,6 +56,7 @@ group :development do
   gem 'guard'
   gem 'guard-minitest'
   gem 'guard-bundler', require: false
+  gem 'guard-livereload', require: false
 end
 
 group :test do
