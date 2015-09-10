@@ -2,8 +2,8 @@
 
 one:
   name: cash
-  account_classification_id: debit
+  account_classification: debit
 
 two:
   name: rent
-  account_classification_id: credit
+  account_classification: credit
