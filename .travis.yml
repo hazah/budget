@@ -11,4 +11,6 @@ deploy:
   app: zhenya-budget-staging
   on:
     repo: hazah/budget
-  run: "rake db:migrate"
+  run:
+    - "rake db:migrate"
+    - "rake db:seed"
