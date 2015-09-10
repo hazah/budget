@@ -20,5 +20,5 @@ AdminUser.create! email: 'admin@example.com', password: 'password', password_con
   {name: 'gain', normal_balance: 'credit'},
   {name: 'loss', normal_balance: 'debit'}
 ].each do |account_classification|
-  AccountClassification.first_or_create! account_classification
+  AccountClassification.where(account_classification).first_or_create!
 end

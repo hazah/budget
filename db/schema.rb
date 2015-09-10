@@ -11,14 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150907151025) do
+ActiveRecord::Schema.define(version: 20150910021007) do
 
   create_table "account_classifications", force: :cascade do |t|
-    t.string   "name"
-    t.string   "normal_balance"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.string   "name",           default: "", null: false
+    t.string   "normal_balance", default: "", null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
+
+  add_index "account_classifications", ["name"], name: "index_account_classifications_on_name", unique: true
+
+  create_table "accounts", force: :cascade do |t|
+    t.string   "name",                      default: "", null: false
+    t.integer  "account_classification_id",              null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+  end
+
+  add_index "accounts", ["account_classification_id"], name: "index_accounts_on_account_classification_id"
+  add_index "accounts", ["name"], name: "index_accounts_on_name", unique: true
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
