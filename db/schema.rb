@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150907151025) do
+ActiveRecord::Schema.define(version: 20150910012016) do
 
   create_table "account_classifications", force: :cascade do |t|
     t.string   "name"
@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(version: 20150907151025) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
+
+  create_table "accounts", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "classification_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "accounts", ["classification_id"], name: "index_accounts_on_classification_id"
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
