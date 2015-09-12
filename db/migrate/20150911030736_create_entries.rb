@@ -9,7 +9,6 @@ class CreateEntries < ActiveRecord::Migration
       t.timestamps null: false
 
       t.foreign_key :accounts, column: :debit_id
-      t.foreign_key :accounts, column: :credit_id
     end
   end
 end
