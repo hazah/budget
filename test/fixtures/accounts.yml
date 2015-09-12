@@ -7,3 +7,7 @@ cash:
 rent:
   name: rent
   account_classification: credit
+
+fund:
+  name: fund
+  account_classification: credit
