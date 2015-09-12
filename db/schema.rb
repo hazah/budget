@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150910021007) do
+ActiveRecord::Schema.define(version: 20150911030736) do
 
   create_table "account_classifications", force: :cascade do |t|
     t.string   "name",           default: "", null: false
@@ -64,5 +64,17 @@ ActiveRecord::Schema.define(version: 20150910021007) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+
+  create_table "entries", force: :cascade do |t|
+    t.integer  "debit_id",                                  null: false
+    t.integer  "credit_id",                                 null: false
+    t.decimal  "amount",           precision: 10, scale: 2, null: false
+    t.date     "transaction_date",                          null: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
+  end
+
+  add_index "entries", ["credit_id"], name: "index_entries_on_credit_id"
+  add_index "entries", ["debit_id"], name: "index_entries_on_debit_id"
 
 end

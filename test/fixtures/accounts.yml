@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+cash:
   name: cash
   account_classification: debit
 
-two:
+rent:
   name: rent
+  account_classification: credit
+
+fund:
+  name: fund
   account_classification: credit
